@@ -1,16 +1,9 @@
 package StepDefinition;
-
 import PageObjectModel.SignInPage;
 import PageObjectModel.leftNav;
 import cucumber.api.java.en.Given;
-import io.github.bonigarcia.wdm.ChromeDriverManager;
-import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-
 import utulities.Driver;
-
 import java.util.concurrent.TimeUnit;
 
 public class countrySteps {
@@ -35,7 +28,7 @@ public class countrySteps {
 
         sip.typeIninputUserName();
         sip.typeIninputPassword();
-        sip.clickbuttonLogin();
+        sip.clickonbuttonLogin();
 
     }
 

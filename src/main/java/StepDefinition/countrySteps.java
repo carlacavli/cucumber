@@ -8,6 +8,8 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.openqa.selenium.WebDriver;
 import utulities.Driver;
+import utulities.ReadPropertiesFile;
+
 import java.util.concurrent.TimeUnit;
 
 public class countrySteps {
@@ -23,7 +25,7 @@ public class countrySteps {
 
         driver = Driver.getDriver();
         driver.manage().window().maximize();
-        driver.get( "https://test-basqar.mersys.io" );
+        driver.get(ReadPropertiesFile.getData("URL"));
         driver.manage().timeouts().implicitlyWait( 20,TimeUnit.SECONDS );
     }
 

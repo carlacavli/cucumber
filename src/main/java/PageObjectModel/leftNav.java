@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import utulities.Driver;
 
 public class leftNav  extends AbstractClass{
+
     private WebDriver driver ;
 
     public leftNav(){
@@ -29,27 +30,34 @@ public class leftNav  extends AbstractClass{
     @FindBy(xpath="//span[contains(text(),'Citizenships')]")
     private WebElement buttonCitizenship;
 
+    @FindBy(xpath="//span[contains(text(),'Nationalities')]")
+    private WebElement buttonNatioanlity;
+
     @FindBy (xpath = "//span[text()='Subject Categories']")
     private WebElement buttonSubjectCategories;
 
     public void clickondropdownSetup(){
-        clickFunction(dropdownSetup);
+        clickFunction( dropdownSetup );
+    }
+
+    public void clickOnbuttonNatioanlity(){
+        clickFunction( buttonNatioanlity );
     }
 
     public void clickondropdownParameters(){
-       clickFunction( dropdownParameters);
+        clickFunction( dropdownParameters );
     }
 
     public void clickonbuttonCountries(){
-       clickFunction(buttonCountries);
+        clickFunction(buttonCountries);
     }
 
     public void clickbuttonCitizenship(){
-       clickFunction(buttonCitizenship);
+        clickFunction(buttonCitizenship);
     }
 
     public void clickSubjectCategories(){
-       clickFunction(buttonSubjectCategories);
+        clickFunction(buttonSubjectCategories);
     }
 
     //    return the current websiteURL

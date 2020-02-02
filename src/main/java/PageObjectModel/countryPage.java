@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 import utulities.Driver;
 
 public class countryPage extends AbstractClass{
+
     private WebDriver driver ;
 
     public countryPage(){
@@ -27,5 +28,6 @@ public class countryPage extends AbstractClass{
     public void typeInthecountryInputCode(String code){
         sendkeysFunction( countryInputCode , code );
     }
+
 
 }

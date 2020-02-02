@@ -1,5 +1,5 @@
 package StepDefinition;
-import PageObjectModel.SignInPage;
+import PageObjectModel.signInPage;
 import PageObjectModel.applicationPage;
 import PageObjectModel.countryPage;
 import PageObjectModel.leftNav;
@@ -11,9 +11,8 @@ import utulities.Driver;
 import java.util.concurrent.TimeUnit;
 
 public class countrySteps {
-
     WebDriver driver;
-    SignInPage sip = new SignInPage();
+    signInPage sip = new signInPage();
     leftNav lv = new leftNav();
     countryPage cp = new countryPage();
     applicationPage ap = new applicationPage();
@@ -24,8 +23,8 @@ public class countrySteps {
 
         driver = Driver.getDriver();
         driver.manage().window().maximize();
-        driver.get("https://test-basqar.mersys.io");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.get( "https://test-basqar.mersys.io" );
+        driver.manage().timeouts().implicitlyWait( 20,TimeUnit.SECONDS );
     }
 
     @Given("^Type the username and password and click on login button$")
@@ -57,20 +56,20 @@ public class countrySteps {
 
     @Given("^Type in the Name \"(.*?)\"$")
     public void type_in_the_Name(String name) throws Throwable {
-        cp.typeIntheCountryInputName(name);
+        cp.typeIntheCountryInputName( name );
     }
 
     @Given("^Type in the code \"(.*?)\"$")
     public void type_in_the_code(String code) throws Throwable {
-        cp.typeInthecountryInputCode(code);
+        cp.typeInthecountryInputCode( code );
     }
-
     @When("^Click on save button$")
     public void click_on_save_button() throws Throwable {
         ap.clickSaveButton();
     }
+
     @Then("^\"(.*?)\" should be displayed$")
     public void should_be_displayed(String name) throws Throwable {
-     ap.nameIsCreated(name);
+        ap.nameIsCreated( name );
     }
 }

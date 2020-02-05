@@ -9,29 +9,10 @@ import org.testng.Reporter;
 import utulities.Driver;
 
 import java.util.List;
+import java.util.Random;
 
 
 public abstract class AbstractClass {
-
-/*
-
-abstract class create
-
-pass the parameters
-
-use it in the step definitions
-
-FindAll
-
-
-
-abstract class create
-
-   clickFunction
-        click on element
-
- */
-
 
     private WebDriver driver = Driver.getDriver();
 
@@ -117,6 +98,28 @@ abstract class create
             System.out.println(value + " is not displayed");
         }
     }
+
+// Click on element(dropdown) , create a random number according to size of the list
+//      click that random number
+
+    public void handleDropdown(WebElement dropdown , List<WebElement> dropdownOptions){
+
+        clickFunction( dropdown );
+        int randomNum = randomGenerator( dropdownOptions.size() );
+        clickFunction(dropdownOptions.get( randomNum ));
+
+    }
+
+    // random number creator
+    public int randomGenerator(int max){
+
+        Random random = new Random();
+        int randomNum = random.nextInt(max);
+        return randomNum;
+    }
+
+
+
 
 // create a delete function
 

@@ -13,15 +13,22 @@ public class Driver {
      */
     private static WebDriver driver;
 
-    public static WebDriver getDriver(){
+    public static WebDriver getDriver() {
 
-        if(driver==null){
+        if (driver == null) {
             ChromeDriverManager.chromedriver().setup();
-            driver = new ChromeDriver(  );
+            driver = new ChromeDriver();
 
         }
 
         return driver;
     }
 
+    public static void closeDriver() {
+        if (driver != null) {
+            driver.quit();
+            driver = null;
+        }
+
+    }
 }
